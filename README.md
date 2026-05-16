@@ -1,61 +1,40 @@
 ```markdown
-# Binary Number Neural Network
-A neural network built from scratch using only NumPy that learns to predict numbers from their binary representation.
+# Personal Data Science Projects
 
-## Overview
-This project implements a fully functional neural network without any ML libraries (TensorFlow, PyTorch, scikit-learn). Every component — forward propagation, backpropagation, gradient descent — is implemented manually.
+A collection of personal projects exploring different areas of data science, machine learning, and artificial intelligence — all built with a focus on understanding the fundamentals from the ground up.
 
-## Architecture
+## Philosophy
+Each project in this repository prioritizes understanding over convenience. Rather than relying on high-level libraries as black boxes, the goal is to implement, break down, and truly understand the mechanics behind every model and algorithm.
+
+## Projects
+
+| Project | Description | Topics |
+|---|---|---|
+| [neural_network](./neural_network/) | Neural network built from scratch using only NumPy | Backprop, Gradient Descent, Forward Prop |
+
+## Topics Covered
+- Machine Learning
+- Deep Learning
+- Data Analysis & Visualization
+- Natural Language Processing
+- Computer Vision
+- Statistical Modeling
+
+## Stack
+- **Language**: Python
+- **Core libraries**: NumPy, Pandas, Matplotlib
+- **ML libraries**: used selectively and with full understanding of the underlying math
+
+## Structure
 ```
-Input (7 bits) → Hidden Layer (16 neurons, ReLU) → Output (1 neuron, linear)
-```
-
-## Components
-| Function | Description |
-|---|---|
-| `transformer_bin(num)` | Converts integer to 7-bit binary list |
-| `tranformer_int(binary)` | Converts binary list back to integer |
-| `init_params(layer_sizes)` | Initializes weights and biases for each layer |
-| `linear_layer(x, w, b)` | Computes z = Wx + b |
-| `relu(x)` | ReLU activation function |
-| `sigmoide(x)` | Sigmoid activation function |
-| `forward_prop(x, params)` | Forward pass through all layers |
-| `loss_mse(y_true, y_pred)` | MSE loss and its derivative |
-| `back_prop(...)` | Backpropagation — computes gradients |
-| `gradient_descent(lr, params, gradients)` | Updates weights using gradients |
-| `train(...)` | Main training loop with early stopping |
-
-## Training
-- **Dataset**: integers 0–100, converted to 7-bit binary vectors
-- **Split**: 80% train / 20% test (random, seeded for reproducibility)
-- **Loss**: Mean Squared Error (MSE)
-- **Optimizer**: Stochastic Gradient Descent (SGD)
-- **Learning rate**: 0.0001
-
-## Results
-| Metric | Score |
-|---|---|
-| Exact accuracy | up to 100% |
-| Within ±2 | up to 100% |
-
-## Usage
-```python
-# train
-params = init_params([7, 16, 1])
-params = train(4000, x_train, y_train, params, lr=0.0001)
-
-# predict
-test = transformer_bin(42)
-z, a = forward_prop(test, params)
-print(round(z[-1][0]))  # → 42
+/
+├── neural_network/
+│   └── ...
+├── project_2/
+│   └── ...
+└── README.md
 ```
 
-## Key Concepts Implemented
-- Linear layer (z = Wx + b)
-- ReLU activation and its derivative
-- Forward propagation
-- Mean Squared Error loss
-- Backpropagation with chain rule
-- Stochastic Gradient Descent
-- Early stopping with patience
+## About
+These projects are built for learning, experimentation, and portfolio purposes. Every implementation is documented with the reasoning behind design decisions, not just the code.
 ```
